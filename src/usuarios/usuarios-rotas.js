@@ -7,7 +7,7 @@ module.exports = app => {
     .post(usuariosControlador.adiciona)
     .get(usuariosControlador.lista);
 
-  app.route('/usuario/:id').delete(usuariosControlador.deleta);
+  app.route('/usuario/:id').delete(passport.authenticate({session:false}), usuariosControlador.deleta);
 
   app
   .route('/usuario/login')
