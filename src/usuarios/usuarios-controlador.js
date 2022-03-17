@@ -1,14 +1,13 @@
 const Usuario = require('./usuarios-modelo');
 const { InvalidArgumentError, InternalServerError } = require('../erros');
 const jwt = require('jsonwebtoken');
-const { set } = require('../../app');
 
 function criaTokenJWT (usuario) {
   const payload = {
     id: usuario.id,
   }
 
-  const token = jwt.sign(payload, process.env.CHAVE_JWT);
+  const token = jwt.sign(payload, process.env.CHAVE_JWT, { expiresIn: '15m' });
   return token;
 
 }
