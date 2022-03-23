@@ -18,6 +18,7 @@
     "passport": "^0.5.2",
     "passport-http-bearer": "^1.0.1",
     "passport-local": "^1.0.0",
+    "redis": "^4.0.4",
     "sqlite3": "^4.1.1"
   }
 }
